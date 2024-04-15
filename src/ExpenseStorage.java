@@ -50,6 +50,14 @@ public class ExpenseStorage {
             System.out.println("Error saving expenses: " + e.getMessage());
         }
     }
+    public static void deleteAllExpenses() {
+        try (Connection conn = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
+             Statement stmt = conn.createStatement()) {
+            stmt.executeUpdate("TRUNCATE TABLE expenses");
+        } catch (SQLException e) {
+            System.out.println("Error deleting expenses: " + e.getMessage());
+        }
+    }
 
     public static ArrayList<Expense> loadExpenses() {
         ArrayList<Expense> expenses = new ArrayList<>();
