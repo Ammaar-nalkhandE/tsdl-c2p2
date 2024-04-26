@@ -33,7 +33,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class ExpenseStorage {
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/JAVA_MiniProj";
+    private static final String JDBC_URL = "jdbc:mariadb://localhost:3306/JAVA_MiniProj";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "202201495";
 
